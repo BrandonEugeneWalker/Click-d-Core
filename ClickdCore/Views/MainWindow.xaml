@@ -3,10 +3,16 @@
         xmlns:vm="clr-namespace:ClickdCore.ViewModels;assembly=ClickdCore"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
         x:Class="ClickdCore.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="ClickdCore">
+        Title="ClickdCore"
+        Width="600"
+        MinWidth="600"
+        MaxWidth="600"
+        Height="600"
+        MinHeight="600"
+        MaxHeight="600">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -14,7 +20,50 @@
 
     <Border BorderThickness="1" Padding="2">
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
-            <TextBlock Text="This is a test." Grid.Row="0" Grid.Column="0"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Button Command="{Binding AboutCommand}" Width="150" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right"> About Click'd Core </Button>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" > Mouse Button Options: </TextBlock>
+
+            <RadioButton Grid.Row="2" Grid.Column="0"> Left </RadioButton>
+            <Image Source="../Assets/Images/mouse.png" Grid.Row="2" Grid.Column="1" Width="64" Height="64"/>
+            <RadioButton Grid.Row="2" Grid.Column="2"> Right </RadioButton>
+
+            <TextBlock Grid.Row="3" Grid.Column="0"> Mouse Action Options: </TextBlock>
+
+            <RadioButton Grid.Row="4" Grid.Column="0"> Hold </RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1"> Click </RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="2"> Auto Click </RadioButton>
+
+            <TextBlock Grid.Row="5" Grid.Column="0"> Auto Click Options: </TextBlock>
+
+            <TextBlock Grid.Row="6" Grid.Column="0"> Clicks Per Second: </TextBlock>
+            <NumericUpDown Grid.Row="6" Grid.Column="1" Value="6" Increment="1" Minimum="1" Maximum="20"/>
+
+            <TextBlock Grid.Row="7" Grid.Column="0"> Hotkey Select: </TextBlock>
+
+            <TextBlock Grid.Row="8" Grid.Column="0"> Hotkey: </TextBlock>
+            <TextBox Grid.Row="8" Grid.Column="1" IsReadOnly="true"/>
+            <Button Grid.Row="8" Grid.Column="2" Command="{Binding SetHotkeyCommand}"> Set... </Button>
+
         </Grid>
     </Border>
 

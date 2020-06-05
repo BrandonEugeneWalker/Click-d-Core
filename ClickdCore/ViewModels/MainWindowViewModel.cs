@@ -15,5 +15,10 @@ namespace ClickdCore.ViewModels
         {
             //TODO
         }
+
+        public void SetHotkeyCommand()
+        {
+            //TODO
+        }
     }
 }
