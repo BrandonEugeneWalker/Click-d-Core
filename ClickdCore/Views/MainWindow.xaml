@@ -8,11 +8,9 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="ClickdCore"
         Width="600"
-        MinWidth="600"
-        MaxWidth="600"
+        MinWidth="300"
         Height="600"
-        MinHeight="600"
-        MaxHeight="600">
+        MinHeight="300">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -39,30 +37,30 @@
             </Grid.RowDefinitions>
 
 
-            <Button Command="{Binding AboutCommand}" Width="150" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right"> About Click'd Core </Button>
+            <Button Command="{Binding AboutCommand}" Width="50" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Padding="5"> About </Button>
 
-            <TextBlock Grid.Row="1" Grid.Column="0" > Mouse Button Options: </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="4" HorizontalAlignment="Left"> Mouse Button Options: </TextBlock>
 
-            <RadioButton Grid.Row="2" Grid.Column="0"> Left </RadioButton>
-            <Image Source="../Assets/Images/mouse.png" Grid.Row="2" Grid.Column="1" Width="64" Height="64"/>
-            <RadioButton Grid.Row="2" Grid.Column="2"> Right </RadioButton>
+            <RadioButton Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"> Left </RadioButton>
+            <Image Source="../Assets/Images/mouse.png" Grid.Row="2" Grid.Column="1" Width="64" Height="64" HorizontalAlignment="Center"/>
+            <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left"> Right </RadioButton>
 
-            <TextBlock Grid.Row="3" Grid.Column="0"> Mouse Action Options: </TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="4" HorizontalAlignment="Left"> Mouse Action Options: </TextBlock>
 
-            <RadioButton Grid.Row="4" Grid.Column="0"> Hold </RadioButton>
-            <RadioButton Grid.Row="4" Grid.Column="1"> Click </RadioButton>
-            <RadioButton Grid.Row="4" Grid.Column="2"> Auto Click </RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"> Hold </RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"> Click </RadioButton>
+            <RadioButton Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left"> Auto Click </RadioButton>
 
-            <TextBlock Grid.Row="5" Grid.Column="0"> Auto Click Options: </TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="4" HorizontalAlignment="Left"> Auto Click Options: </TextBlock>
 
-            <TextBlock Grid.Row="6" Grid.Column="0"> Clicks Per Second: </TextBlock>
-            <NumericUpDown Grid.Row="6" Grid.Column="1" Value="6" Increment="1" Minimum="1" Maximum="20"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Left"> Clicks Per Second: </TextBlock>
+            <NumericUpDown Grid.Row="6" Grid.Column="1" Value="6" Increment="1" Minimum="1" Maximum="20" HorizontalAlignment="Center"/>
 
-            <TextBlock Grid.Row="7" Grid.Column="0"> Hotkey Select: </TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="0" Margin="4" HorizontalAlignment="Left"> Hotkey Select: </TextBlock>
 
-            <TextBlock Grid.Row="8" Grid.Column="0"> Hotkey: </TextBlock>
-            <TextBox Grid.Row="8" Grid.Column="1" IsReadOnly="true"/>
-            <Button Grid.Row="8" Grid.Column="2" Command="{Binding SetHotkeyCommand}"> Set... </Button>
+            <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Left"> Hotkey: </TextBlock>
+            <TextBox Grid.Row="8" Grid.Column="1" IsReadOnly="true" HorizontalAlignment="Center" Width="20/>
+            <Button Grid.Row="8" Grid.Column="2" Command="{Binding SetHotkeyCommand}" HorizontalAlignment="Left"> Set... </Button>
 
         </Grid>
     </Border>
