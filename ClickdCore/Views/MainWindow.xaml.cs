@@ -6,6 +6,9 @@ namespace ClickdCore.Views
 {
     public class MainWindow : Window
     {
+
+        private bool IsLeftClickChecked {get; set;}
+
         public MainWindow()
         {
             InitializeComponent();
